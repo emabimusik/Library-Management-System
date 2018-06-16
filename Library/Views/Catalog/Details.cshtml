@@ -1,0 +1,120 @@
+﻿@model Library.Models.Catalog.AssetDetailModel
+
+<div>
+
+</div>
+<div class="container">
+    <div class="row" id="bookrow">
+        <div class="col-sm-6">
+
+            <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="@Model.ImageUrl" width="150" height="120" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text-detail"><span class="text-muted">Title:</span>@Model.Title.</p>
+                    <p class="card-text-detail"><span class="text-muted">Author/Dir:</span>@Model.AuthorOrDirector.</p>
+                    <p class="card-text-detail"><span class="text-muted">Type:</span>@Model.Type</p>
+                    <p class="card-text-detail"><span class="text-muted">Location:</span>@Model.CurrentLocation</p>
+
+                    @if (Model.Status == "Lost")
+                {
+                    <p class="card-text-detail">This item has been lost. It can not be checked out.</p>
+                    <p class="card-text-detail"><a asp-controller="Catalog" asp-action="MarkFound" asp-route-id="@Model.AssetId">Mark item Found</a></p>
+
+            }
+                    @if (Model.Status == "Checked Out")
+                {
+                    <p class="card-text-detail"><span class="text-muted">Checkout by:</span> @Model.PatronName</p>
+                    <p class="card-text-detail"><a class="btn-lg btn-info" asp-controller="Catalog" asp-action="Checkin" asp-route-id="@Model.AssetId">Check In</a></p>
+                    <p class="card-text-detail"><a class="btn-lg btn-success" asp-controller="Catalog" asp-action="Hold" asp-route-id="@Model.AssetId">Place Hold</a></p>
+
+            }
+                    @if (Model.Status == "Available")
+                {
+                    <p class="card-text-detail"><a class="btn-lg btn-success" asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.AssetId">Checkout</a></p>
+
+            }
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <table class="table table-bordered">
+                <tr>
+                    <td scope="col">ISBN :</td>
+                    <td scope="col">@Model.ISBN</td>
+                </tr>
+                <tr>
+                    <td scope="col">Call Number :</td>
+                    <td scope="col">@Model.DeweyCallNumber</td>
+                </tr>
+                <tr>
+                    <td scope="col">Replacement Cost :</td>
+                    <td scope="col">@Model.Cost</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">Checkout History</tr>
+                    <tr>
+                        <th>Date Loaned</th>
+                        <th>Date Returned</th>
+                        <th>Card Id</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var checkout in @Model.CheckoutHistory)
+                {
+                    <tr>
+                        <td>
+                            @checkout.CheckedOut
+                        </td>
+                        <td>
+                            @checkout.CheckedIn
+                        </td>
+                        <td>
+                            @checkout.LibraryCard.Id
+                        </td>
+                    </tr>
+            }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">Current Holds</tr>
+                    <tr>
+                        <th>Hold Placed</th>
+                        <th>Patron</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hold in @Model.CurrentHolds)
+                {
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            @hold.HoldPlaced
+                        </td>
+                   
+
+                    
+                        <td class="mdl-data-table__cell--non-numeric">
+                            @hold.PatronName
+                        </td>
+                    </tr>
+            }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

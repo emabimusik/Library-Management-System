@@ -1,0 +1,62 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Library Gentofte</title>
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+</head>
+<body >
+
+
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Libray Management System</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="mdl-navigation__link" asp-controller="Catalog" asp-action="Index">Catalog</a>
+                    <a class="mdl-navigation__link" asp-controller="Patron" asp-action="Index">Patron</a>
+                    <a class="mdl-navigation__link" asp-controller="Branch" asp-action="Index">Branch</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="mdl-navigation__link" asp-controller="Catalog" asp-action="Index">Catalog</a>
+                <a class="mdl-navigation__link" asp-controller="Patron" asp-action="Index">Patron</a>
+                <a class="mdl-navigation__link" asp-controller="Branch" asp-action="Index">Branch</a>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="page-content">
+                @RenderBody()
+                <!-- @Html.Partial("_Footer")-->
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    @RenderSection("scripts", required: false)
+    @RenderSection("Styles", required: false)
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿@model Library.Models.Branch.BranchIndexModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Branch Details</h2>
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+        <h4>Patron Information</h4>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+                <tr>
+                
+
+                    <th class="mdl-data-table__cell--non-numeric">
+                        <span>Brach Name</span>
+                    </th>
+
+
+                    <th class="mdl-data-table__cell--non-numeric">
+                        <span>Open Now</span>
+                    </th>
+
+
+                    <th class="mdl-data-table__cell--non-numeric">
+                        <span>Numbers of  Assets</span>
+                    </th>
+
+
+                    <th class="mdl-data-table__cell--non-numeric">
+                        <span> Numbers of Patrons </span>
+                    </th>
+                </tr>
+
+
+
+              
+            </thead>
+            <tbody>
+
+               
+
+
+
+                @foreach (var branch in Model.Branches)
+                {
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">@branch.Name</a>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            @branch.isOpen
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            @branch.NumberOfAssets
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            @branch.NumberOfPatrons
+                        </td>
+
+
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,67 @@
+﻿@model Library.Models.Catalog.AssetIndexModel
+@{
+    ViewBag.Title = "Library Catalog Index";
+}
+<div id="assets">
+    <!--
+    <div id="assets">
+
+        <div class="mdl-grid">
+
+
+            @foreach (var asset in @Model.Assets)
+        {
+
+
+
+            <div class="mdl-cell mdl-cell--4-col">
+
+                <div class="mdl-card mdl-shadow--16dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">@asset.Title</h2>
+                    </div>
+                    <div class="mdl-card__media">
+                        <img src="@asset.ImageUrl" width="330" height="140"  />
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>Author/Director<span>@asset.AuthorOrDirector</span></p>
+                        <p>DeweyNumber <span>@asset.DeweyCallNumber</span></p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a asp-controller="Catalog" asp-action="Details" asp-route-id="@asset.Id">
+                            Details
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+                }
+
+
+            </div>
+        </div>
+
+        -->
+   
+
+</div>
+
+
+    @section Styles {
+
+
+
+    }
+    @section Scripts {
+        <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+        <!--
+        <script>
+            $(document).ready(function () {
+                $('#catalogIndexTable').DataTable();
+            });
+        </script>
+            -->
+    }

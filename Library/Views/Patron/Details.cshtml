@@ -1,0 +1,159 @@
+﻿@model Library.Models.Patron.PatronDetailModel
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4> @ViewData["Title"]</h4>
+
+
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--4-col">
+        <h4>Patron Information</h4>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">@Model.FirstName @Model.LastName</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span> LibraryCard Id:</span>  @Model.LibraryCardId
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span> Addres:</span>  @Model.Address
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span> Patron Tel:</span>  @Model.Telephone
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span> PatronDate:</span>  @Model.MemberSince
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <span> Home Library:</span>  @Model.HomeLibraryBranch
+                    </td>
+                </tr>
+
+
+                @if (Model.OverdueFees > 0)
+
+                {
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span class="mdl-button mdl-js-button mdl-button--raised"> Patrons Fees:</span>  @Model.OverdueFees
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <span> No Fees Currently Due:</span>
+                        </td>
+                    </tr>
+
+
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <div class="mdl-cell mdl-cell--4-col">
+        <h4>Asset Currently Checkout</h4>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+
+            <tbody>
+                @if (Model.assetsCheckedOut.Any())
+                {
+
+                    @foreach (var checkout in Model.assetsCheckedOut)
+                    {
+                        <tr>
+                            <td rowspan="1" colspan="1"> @checkout.LibraryAsset.Title -<span>(Library Asset ID=@checkout.LibraryAsset.Id</span></td>
+
+                        </tr>
+                        <tr>
+                            <td> <span>Since:</span> : @checkout.Since</td>
+                        </tr>
+
+                        <tr>
+                            <td> <span>Since:</span> : @checkout.Until</td>
+                        </tr>
+                        <tr>
+                            <td> <span>Due:</span> : @checkout.Until</td>
+
+                        </tr>
+
+                    }
+
+
+                }
+                else
+                {
+
+                    <tr>
+                        <td> No itens currently out.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <div class="mdl-cell mdl-cell--4-col">
+        <h4>Asset Currently On Hold</h4>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+
+
+            <tbody>
+                @if (Model.Holds.Any())
+                {
+
+                    @foreach (var hold in Model.Holds)
+                    {
+                        <tr>
+                            <td rowspan="1" colspan="1">@hold.LibraryAsset.Title-<span>Placed </span> @hold.HoldPlaced.ToString("yy-dd-MM -HH:mm")</td>
+
+                        </tr>
+
+                    }
+
+                }
+                else
+                {
+
+                    <tr>
+                        <td> No itenson Hold.</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>

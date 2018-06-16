@@ -1,0 +1,36 @@
+﻿@model Library.Models.Catalog.AssetIndexModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2 class="title-heading-left">Libary Assets</h2>
+<ul id="grid-wraper">
+
+    @foreach (var asset in @Model.Assets)
+        {
+
+    <li class="card">
+        <div class="app-img-wrapper">
+            <img src="@asset.ImageUrl" alt="asset-img" class="app-img" />
+        </div>
+        <div class="title-bar">
+            <h1 class="card-title">@asset.Title</h1>
+            <p id="call-number">
+                Author/Director<span>@asset.AuthorOrDirector</span>
+            </p>
+            <p class="infoP">DeweyNumber <span>@asset.DeweyCallNumber</span></p>
+            <div id="action-link">
+                <a asp-controller="Catalog" asp-action="Details" asp-route-id="@asset.Id">
+                    Details
+                </a>
+            </div>
+
+        </div>
+    </li>
+    }
+</ul>
+
+
+
+

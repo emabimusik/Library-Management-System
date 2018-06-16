@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+  //  Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+
+<div>
+
+    <div class='container'>
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <!-- Boxes de Acoes -->
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><i class="fa fa-book"></i></div>
+                        <div class="info">
+                            <h3 class="title">SHOW ALL CATALOG</h3>
+                            <p>
+                                Show you the catalog, assets including books and vides for different branches.
+                            </p>
+                            <div class="more">
+                                @Html.ActionLink("Catalog", "Index", "Catalog")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><i class="fa fa-home"></i></div>
+                        <div class="info">
+                            <h3 class="title">SHOW BRANCH</h3>
+                            <p>
+                                List of  all branches at one place. You can see the list with all the Details.
+                            </p>
+                            <div class="more">
+                                @Html.ActionLink("Branch", "Index", "Branch")
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><i class="fa fa-user"></i></div>
+                        <div class="info">
+                            <h3 class="title">SHOW Members</h3>
+                            <p>
+                                See all Members the details about specific patron and booking at once place .
+                            </p>
+                            <div class="more">
+                                @Html.ActionLink("Patron", "Index", "Patron")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <div class="box">
+                    <div class="icon">
+                        <div class="image"><i class="fa fa-envelope"></i></div>
+                        <div class="info">
+
+                            <h3 class="title">BOOK NOW</h3>
+                            <p>
+                                We simplified car rentals, so you can focus on what's important to you.
+                            </p>
+                            <div class="more">
+                                @Html.ActionLink("About", "Index", "About")
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="space"></div>
+                </div>
+            </div>
+
+
+            <!-- /Boxes de Acoes -->
+        </div>
+    </div>
+</div>
+

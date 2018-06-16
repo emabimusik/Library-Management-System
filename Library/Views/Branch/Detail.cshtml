@@ -1,0 +1,67 @@
+﻿@model Library.Models.Branch.BranchDetailModel
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Branch info</h2>
+
+
+<div>
+    <div class="mdl-grid">
+
+        <div class="mdl-card mdl-shadow--4dp">
+            <div class="mdl-card__media">
+
+                <img class="detailImage" src="@Model.ImageUrl" width="250" height="180" />
+            </div>
+            <div class="mdl-card__supporting-text">
+                @Model.Name
+            </div>
+            <div class="mdl-card__supporting-text">
+                <span> Address</span>: <p>@Model.Address</p>
+                <span> Telephone</span>: <p>@Model.Telephone</p>
+            </div>
+            <div class="divider"> </div>
+            <span>Description</span>:<p>@Model.Description</p> <br/>
+            <div class="divider"> </div>
+            <div>
+                @foreach (var day in @Model.HoursOpen)
+    {
+            <p>@day</p>
+
+}
+            </div>
+        </div>
+        <div class="mdl-card mdl-shadow--4dp">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <tr>
+                    <td>Date Opened:</td>
+                    <td>@Model.OpenDate</td>
+                </tr>
+                <tr>
+                    <td>Number of Patron:</td>
+                    <td>@Model.NumberOfPatrons</td>
+                </tr>
+                <tr>
+                    <td>Number of asset:</td>
+                    <td>@Model.NumberOfAssets</td>
+                </tr>
+                <tr>
+                    <td>Value of Asset:</td>
+                    <td>@Model.TotalAssetValue</td>
+                </tr>
+            </table>
+
+        </div>
+       
+    </div>
+
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+﻿<div class="container">
+    @{
+
+        ViewBag.Title = "Members List";
+
+
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <h2> @ViewBag.Title</h2>
+
+    <div class="mdl-grid ">
+        <div class="mdl-cell mdl-cell--12-col ">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Profile</th>
+                        <th class="mdl-data-table__cell--non-numeric">Last Name</th>
+                        <th class="mdl-data-table__cell--non-numeric">First Name</th>
+                        <th class="mdl-data-table__cell--non-numeric">LibraryCard id</th>
+                        <th class="mdl-data-table__cell--non-numeric">Overdue Fees</th>
+                        <th class="mdl-data-table__cell--non-numeric">Home Library</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var patron in Model.Patrons)
+
+                    {
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">  <a asp-controller="Patron" asp-action="Details" asp-route-id="@patron.Id">Profile</a><i class="material-icons mdl-list__item-icon">person<i /></td>
+                            <td class="mdl-data-table__cell--non-numeric">@patron.LastName</td>
+                            <td class="mdl-data-table__cell--non-numeric">@patron.FirstName</td>
+                            <td class="mdl-data-table__cell--non-numeric">@patron.LibraryCardId</td>
+                            <td class="mdl-data-table__cell--non-numeric">@patron.OverdueFees</td>
+                            <td class="mdl-data-table__cell--non-numeric">@patron.HomeLibraryBranch</td>
+                        </tr>
+                    }
+                </tbody>
+
+
+
+            </table>
+        </div>
+    </div>
+
+</div>

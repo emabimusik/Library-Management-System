@@ -1,0 +1,12 @@
+C:\Users\abiyo\source\repos\Library\LibraryServices\bin\Debug\netcoreapp2.0\LibraryServices.deps.json
+C:\Users\abiyo\source\repos\Library\LibraryServices\bin\Debug\netcoreapp2.0\LibraryServices.dll
+C:\Users\abiyo\source\repos\Library\LibraryServices\bin\Debug\netcoreapp2.0\LibraryServices.pdb
+C:\Users\abiyo\source\repos\Library\LibraryServices\bin\Debug\netcoreapp2.0\LibraryData.dll
+C:\Users\abiyo\source\repos\Library\LibraryServices\bin\Debug\netcoreapp2.0\LibraryData.pdb
+C:\Users\abiyo\source\repos\Library\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.csprojResolveAssemblyReference.cache
+C:\Users\abiyo\source\repos\Library\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.csproj.CoreCompileInputs.cache
+C:\Users\abiyo\source\repos\Library\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.AssemblyInfoInputs.cache
+C:\Users\abiyo\source\repos\Library\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.AssemblyInfo.cs
+C:\Users\abiyo\source\repos\Library\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.csproj.CopyComplete
+C:\Users\abiyo\source\repos\Library\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.dll
+C:\Users\abiyo\source\repos\Library\LibraryServices\obj\Debug\netcoreapp2.0\LibraryServices.pdb
